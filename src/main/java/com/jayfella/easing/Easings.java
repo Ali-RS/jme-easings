@@ -15,6 +15,14 @@ public class Easings {
         Quint,
         Sine;
 
+        /**
+         * Ease IN
+         * @param t Time: The duration of time that has passed, between 0 and duration
+         * @param b Begin: The value of the result when time = 0.
+         * @param c Change: The amount begin will change.
+         * @param d Duration: The length of time the animation will take.
+         * @return the resulting equation value.
+         */
         public float easeIn(float t, float b, float c, float d) {
 
             switch (this) {
@@ -35,7 +43,14 @@ public class Easings {
             }
         }
 
-
+        /**
+         * Ease OUT
+         * @param t Time: The duration of time that has passed, between 0 and duration
+         * @param b Begin: The value of the result when time = 0.
+         * @param c Change: The amount begin will change.
+         * @param d Duration: The length of time the animation will take.
+         * @return the resulting equation value.
+         */
         public float easeOut(float t, float b, float c, float d) {
 
             switch (this) {
@@ -56,6 +71,14 @@ public class Easings {
             }
         }
 
+        /**
+         * Ease In
+         * @param t Time: The duration of time that has passed, between 0 and duration.
+         * @param b Begin: The value of the result when time = 0.
+         * @param c Change: The amount begin will change.
+         * @param d Duration: The length of time the animation will take.
+         * @return the resulting equation value.
+         */
         public float easeInOut(float t, float b, float c, float d) {
 
             switch (this) {
@@ -83,10 +106,30 @@ public class Easings {
         EaseInOut
     }
 
+    /**
+     *
+     * @param function the easing function to use.
+     * @param action   the action or direction of the function.
+     * @param time     The duration of time that has passed, between 0 and duration.
+     * @param begin    The value of the result when time = 0.
+     * @param change   The amount begin will change.
+     * @param duration The length of time the animation will take.
+     * @return the resulting equation value.
+     */
     public static float  ease(Function function, Action action, double time, float begin, float change, double duration) {
         return ease(function, action, (float)time, begin, change, (float)duration);
     }
 
+    /**
+     *
+     * @param function the easing function to use.
+     * @param action   the action or direction of the function.
+     * @param time     The duration of time that has passed, between 0 and duration.
+     * @param begin    The value of the result when time = 0.
+     * @param change   The amount begin will change.
+     * @param duration The length of time the animation will take.
+     * @return the resulting equation value.
+     */
     public static float ease(Function function, Action action, float time, float begin, float change, float duration) {
 
         switch (action) {

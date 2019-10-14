@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group 'com.jayfella'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    maven { url 'https://dl.bintray.com/stephengold/org.jmonkeyengine' } // for jme3-testdata
+}
+
+project.ext {
+    jmeVer = "[3.3,)"
+    lemurVer = "1.13.0"
+    lemurProtoVer = "1.9.1"
+    lemurPropsVer = "1.0.1"
+}
+
+dependencies {
+    // testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    implementation "org.jmonkeyengine:jme3-core:$jmeVer"
+    implementation "org.jmonkeyengine:jme3-desktop:$jmeVer"
+    implementation "org.jmonkeyengine:jme3-lwjgl:$jmeVer"
+
+    implementation "com.simsilica:lemur:$lemurVer"
+    compile "com.simsilica:lemur-proto:$lemurProtoVer"
+    compile "com.simsilica:lemur-props:$lemurPropsVer"
+    implementation "org.codehaus.groovy:groovy-all:2.5.4"
+
+    runtimeOnly 'org.jmonkeyengine:jme3-testdata:3.3.0-alpha2'
+}

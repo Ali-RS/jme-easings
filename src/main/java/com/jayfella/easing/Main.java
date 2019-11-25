@@ -42,7 +42,7 @@ public class Main extends SimpleApplication {
         rootNode.addLight(new DirectionalLight(new Vector3f(-1, -1, -1).normalizeLocal(), ColorRGBA.White.mult(0.4f)));
 
         // add a PBR probe.
-        Spatial probeModel = assetManager.loadModel("Scenes/defaultProbe.j3o");
+        Spatial probeModel = assetManager.loadModel("defaultProbe.j3o");
         LightProbe lightProbe = (LightProbe) probeModel.getLocalLightList().get(0);
         lightProbe.setBounds(new BoundingSphere(500, new Vector3f(0, 0, 0)));
         rootNode.addLight(lightProbe);

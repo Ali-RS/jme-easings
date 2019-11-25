@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven'
 }
 
 group 'com.jayfella'
@@ -9,7 +10,7 @@ sourceCompatibility = 1.8
 
 repositories {
     jcenter()
-    maven { url 'https://dl.bintray.com/stephengold/org.jmonkeyengine' } // for jme3-testdata
+    // maven { url 'https://dl.bintray.com/stephengold/org.jmonkeyengine' } // for jme3-testdata
 }
 
 project.ext {
@@ -31,5 +32,5 @@ dependencies {
     compile "com.simsilica:lemur-props:$lemurPropsVer"
     implementation "org.codehaus.groovy:groovy-all:2.5.4"
 
-    runtimeOnly 'org.jmonkeyengine:jme3-testdata:3.3.0-alpha2'
+    // runtimeOnly 'org.jmonkeyengine:jme3-testdata:3.3.0-alpha2'
 }
